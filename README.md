@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CyberGuard 🛡️
 
-## Getting Started
+Quantify cyber risk. Block compromise paths.
 
-First, run the development server:
+An interactive cybersecurity risk assessment platform that translates personal security habits into quantifiable scores. Simulate exploit chains, test real-time What-If mitigations, and compile security audit reports on a sleek interactive dashboard.
+
+## Features
+
+### 🔍 Security Assessment
+- **Guided questionnaire** across multiple security categories
+- **CIA scoring** (Confidentiality, Integrity, Availability) per answer
+- **Risk levels**: Low → Medium → High → Critical
+- **Progress tracking** with question navigation
+
+### 🎯 What-If Analysis
+Real-time mitigation impact simulation:
+- Enable MFA
+- Install antivirus
+- Update OS
+- Use unique passwords
+- Secure WiFi
+
+### 📊 Interactive Dashboard
+- **Risk score visualization** with animated gauge
+- **CIA triad breakdown** with radial charts
+- **Attack path mapping** — visualize exploit chains
+- **Mitigation recommendations** prioritized by risk reduction
+
+### 🖥️ Sandbox Terminal
+- Interactive command-line interface
+- Simulated security tool outputs
+- Learning-focused exploration
+
+### 📄 Report Generation
+- PDF/HTML export of assessment results
+- Detailed findings with CIA impact
+- Actionable remediation steps
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Framework** | Next.js 15 (App Router) |
+| **Language** | TypeScript (strict) |
+| **Styling** | Tailwind CSS + CSS Variables |
+| **State** | Zustand |
+| **Icons** | Lucide React |
+| **Charts** | Custom SVG/Canvas |
+| **Deployment** | Vercel |
+
+## Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── assessment/     # Security questionnaire flow
+│   ├── dashboard/      # Risk visualization & What-If
+│   ├── reports/        # Report generation & export
+│   ├── terminal/       # Sandbox terminal
+│   ├── about-developer/ # Author info
+│   ├── about-project/   # Project documentation
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Landing page
+│   └── globals.css     # Global styles
+├── components/
+│   └── layout/         # Shared layout components
+├── stores/
+│   └── assessment-store.ts  # Zustand store
+├── types/
+│   └── index.ts        # TypeScript definitions
+└── lib/                # Utilities
+```
 
-## Learn More
+## Key Concepts
 
-To learn more about Next.js, take a look at the following resources:
+### CIA Triad Scoring
+Each answer impacts three dimensions:
+- **Confidentiality** — Data privacy & access control
+- **Integrity** — Data accuracy & tamper resistance
+- **Availability** — System uptime & resilience
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Risk Levels
+| Score | Level | Color |
+|-------|-------|-------|
+| 0–25 | Low | Green |
+| 26–50 | Medium | Yellow |
+| 51–75 | High | Orange |
+| 76–100 | Critical | Red |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### What-If Toggles
+Each mitigation shows real-time risk reduction:
+```
+Base Risk: 78 (High)
+┌─ Enable MFA          → -22 points → 56 (Medium)
+├─ Install Antivirus   → -15 points → 63 (Medium)
+├─ Update OS           → -18 points → 60 (Medium)
+├─ Unique Passwords    → -12 points → 66 (Medium)
+└─ Secure WiFi         → -8 points  → 70 (High)
+```
+
+## Scripts
+
+```bash
+npm run dev       # Development server
+npm run build     # Production build
+npm run start     # Production server
+npm run lint      # ESLint check
+```
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAniket-Solanki%2FCyberGuard)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+*Built with ❤️ by [Aniket Solanki](https://github.com/Aniket-Solanki)*
